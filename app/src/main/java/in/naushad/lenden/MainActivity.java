@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     String Len,LenFinal,Den,DenFinal,Name;
 
     //Chrome Custom Tabs
-    public static final String SourceCodeURL="https://github.com/naushadS/Split-My-Bill";
+    public static final String SourceCodeURL="https://github.com/naushadS/Len-Den";
     public static final String DevsGithubURL="https://github.com/naushadS";
     static final String STABLE_PACKAGE = "com.android.chrome";
     static final String BETA_PACKAGE = "com.chrome.beta";
