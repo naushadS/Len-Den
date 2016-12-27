@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">@color/navigationBarColor</item>
+        <item name="android:colorPrimary" tools:targetApi="21">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="21">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent" tools:targetApi="21">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor" tools:targetApi="21">@color/navigationBarColor</item>
+        <item name="android:colorPrimary" tools:targetApi="21">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark" tools:targetApi="21">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent" tools:targetApi="21">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Dark.NoActionBar" parent="AppTheme.Dark">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:textColorPrimary">@color/white</item> <!--title color -->
+        <item name="android:textColorSecondary">@color/white</item> <!-- subtitle color-->
+        <item name="android:textColor">@color/white</item> <!-- menu item text color -->
+        <item name="colorControlNormal">@color/white</item> <!-- menu items color -->
+    </style>
+
+    <style name="deleteButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/ic_delete_white_24dp</item>
+        <item name="elevation">5dp</item>
+    </style>
+
+    <style name="editButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">@drawable/ic_mode_edit_white_24dp</item>
+        <item name="elevation">5dp</item>
+    </style>
+
+
+</resources>
