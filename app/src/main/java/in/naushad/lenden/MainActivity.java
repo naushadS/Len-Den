@@ -1,6 +1,5 @@
 package in.naushad.lenden;
 
-import android.Manifest;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.customtabs.CustomTabsClient;
@@ -66,15 +64,11 @@ public class MainActivity extends AppCompatActivity {
     static final String LOCAL_PACKAGE = "com.google.android.apps.chrome";
     private static String sPackageNameToUse;
     String finalPackageName;
-    //private Bitmap mCloseButtonBitmap;
 
     CustomTabsClient mClient;
     CustomTabsSession mCustomTabsSession;
     CustomTabsServiceConnection mCustomTabsServiceConnection;
     CustomTabsIntent customTabsIntent;
-
-    //permission required list
-    String[] mPermission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
 
@@ -83,16 +77,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if(Build.VERSION.SDK_INT>=23) {
-            //Requesting permissions
-            try {
-                if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    requestPermissions(mPermission, REQUEST_CODE_ASK_PERMISSIONS);
-                }
-            } catch (Exception e) {}
-        }
 
         init();
 
@@ -106,22 +90,6 @@ public class MainActivity extends AppCompatActivity {
         tvLastModified.append(String.valueOf(DateUtils.getRelativeTimeSpanString(jsonfile.lastModified(),System.currentTimeMillis(),DateUtils.MINUTE_IN_MILLIS)));
 
         initializeChromeCustomTab();
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    android.os.Process.killProcess(android.os.Process.myPid());
-                } else {
-                    // Permission Denied
-                    Toast.makeText(MainActivity.this, "Permission Denied", Toast.LENGTH_SHORT)
-                            .show();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
     }
 
     private void init() {
